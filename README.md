@@ -89,17 +89,17 @@ oc logs --tail=1 -f deployment/monitor -n network-policy-demo-monitor
 === "OC"
 
     ```
-    oc apply -f {{ page.canonical_url }}01_default-deny-simpson.yaml
+    oc apply -f {{ page.canonical_url }}01_default-deny-frontend.yaml
     ```
 
-=== "01_default-deny-simpson.yaml"
+=== "01_default-deny-frontend.yaml"
 
     ```yaml
-    --8<-- "content/networking/network-policy/network-policy-demo/01_default-deny-simpson.yaml"
+    --8<-- "content/networking/network-policy/network-policy-demo/01_default-deny-frontend.yaml"
     ```
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![01_default-deny-simpson.png](01_default-deny-simpson.png){ width="640" }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![01_default-deny-frontend.png](01_default-deny-frontend.png){ width="640" }
 
 ## Step 2) Allow ingress
 
@@ -107,17 +107,17 @@ oc logs --tail=1 -f deployment/monitor -n network-policy-demo-monitor
 === "OC"
 
     ```
-    oc apply -f {{ page.canonical_url }}02_allow-from-openshift-ingress-simpson.yaml
+    oc apply -f {{ page.canonical_url }}02_allow-from-openshift-ingress-frontend.yaml
     ```
 
-=== "02_allow-from-openshift-ingress-simpson.yaml"
+=== "02_allow-from-openshift-ingress-frontend.yaml"
 
     ```yaml
-    --8<-- "content/networking/network-policy/network-policy-demo/02_allow-from-openshift-ingress-simpson.yaml"
+    --8<-- "content/networking/network-policy/network-policy-demo/02_allow-from-openshift-ingress-frontend.yaml"
     ```
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![02_allow-from-openshift-ingress-simpson.png](02_allow-from-openshift-ingress-simpson.png){ width="640" }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![02_allow-from-openshift-ingress-frontend.png](02_allow-from-openshift-ingress-frontend.png){ width="640" }
 
 
 
@@ -127,17 +127,17 @@ oc logs --tail=1 -f deployment/monitor -n network-policy-demo-monitor
 === "OC"
 
     ```
-    oc apply -f {{ page.canonical_url }}03_allow-same-namespace-simpson.yaml
+    oc apply -f {{ page.canonical_url }}03_allow-same-namespace-frontend.yaml
     ```
 
-=== "03_allow-same-namespace-simpson.yaml"
+=== "03_allow-same-namespace-frontend.yaml"
 
     ```yaml
-    --8<-- "content/networking/network-policy/network-policy-demo/03_allow-same-namespace-simpson.yaml"
+    --8<-- "content/networking/network-policy/network-policy-demo/03_allow-same-namespace-frontend.yaml"
     ```
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![03_allow-same-namespace-simpson.png](03_allow-same-namespace-simpson.png){ width="640" }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![03_allow-same-namespace-frontend.png](03_allow-same-namespace-frontend.png){ width="640" }
 
 
 ## Step 4) Allow from Bouviers to Marge Simpson
@@ -146,17 +146,17 @@ oc logs --tail=1 -f deployment/monitor -n network-policy-demo-monitor
 === "OC"
 
     ```
-    oc apply -f {{ page.canonical_url }}04_allow-from-bouviers-to-marge-simpson.yaml
+    oc apply -f {{ page.canonical_url }}04_allow-from-backend-to-siteb-frontend-frontend.yaml
     ```
 
-=== "04_allow-from-bouviers-to-marge-simpson.yaml"
+=== "04_allow-from-backend-to-siteb-frontend-frontend.yaml"
 
     ```yaml
-    --8<-- "content/networking/network-policy/network-policy-demo/04_allow-from-bouviers-to-marge-simpson.yaml"
+    --8<-- "content/networking/network-policy/network-policy-demo/04_allow-from-backend-to-siteb-frontend-frontend.yaml"
     ```
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![04_allow-from-bouviers-to-marge-simpson.png](04_allow-from-bouviers-to-marge-simpson.png){ width="640" }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![04_allow-from-backend-to-siteb-frontend-frontend.png](04_allow-from-backend-to-siteb-frontend-frontend.png){ width="640" }
 
 
 ## Step 5) Allow from Burns to Simpson
@@ -165,17 +165,17 @@ oc logs --tail=1 -f deployment/monitor -n network-policy-demo-monitor
 === "OC"
 
     ```
-    oc apply -f {{ page.canonical_url }}05_allow-from-burns-simpson.yaml
+    oc apply -f {{ page.canonical_url }}05_allow-from-data-frontend.yaml
     ```
 
-=== "05_allow-from-burns-simpson.yaml"
+=== "05_allow-from-data-frontend.yaml"
 
     ```yaml
-    --8<-- "content/networking/network-policy/network-policy-demo/05_allow-from-burns-simpson.yaml"
+    --8<-- "content/networking/network-policy/network-policy-demo/05_allow-from-data-frontend.yaml"
     ```
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![05_allow-from-burns-simpson.png](05_allow-from-burns-simpson.png){ width="640" }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![05_allow-from-data-frontend.png](05_allow-from-data-frontend.png){ width="640" }
 
 
 

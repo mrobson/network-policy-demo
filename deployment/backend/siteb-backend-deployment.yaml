@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: siteb-backend
+    app.kubernetes.io/component: siteb-backend
+    app.kubernetes.io/instance: siteb-backend
+    app.kubernetes.io/name: siteb-backend
+    app.kubernetes.io/part-of: siteb-backend
+    app.openshift.io/runtime: redhat
+  name: siteb-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: siteb-backend
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: siteb-backend
+        deployment: siteb-backend
+    spec:
+      containers:
+      - image: quay.io/openshift-examples/simple-http-server:micro
+        imagePullPolicy: Always
+        name: http-server
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources: {}

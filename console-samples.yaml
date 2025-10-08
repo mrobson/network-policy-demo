@@ -72,7 +72,7 @@ spec:
 kind: ConsoleYAMLSample
 apiVersion: console.openshift.io/v1
 metadata:
-  name: netpol-demo-simpon-allow-from-burns
+  name: netpol-demo-simpon-allow-from-data
 spec:
   targetResource:
     apiVersion: networking.k8s.io/v1
@@ -84,21 +84,21 @@ spec:
     apiVersion: networking.k8s.io/v1
     kind: NetworkPolicy
     metadata:
-      name: allow-from-burns
+      name: allow-from-data
     spec:
       podSelector: {}
       ingress:
       - from:
         - namespaceSelector:
             matchLabels:
-              kubernetes.io/metadata.name: burns
+              kubernetes.io/metadata.name: data
       policyTypes:
       - Ingress
 ---
 kind: ConsoleYAMLSample
 apiVersion: console.openshift.io/v1
 metadata:
-  name: netpol-demo-simpon-allow-from-bouviers-to-marge
+  name: netpol-demo-simpon-allow-from-backend-to-siteb-frontend
 spec:
   targetResource:
     apiVersion: networking.k8s.io/v1
@@ -110,16 +110,16 @@ spec:
     apiVersion: networking.k8s.io/v1
     kind: NetworkPolicy
     metadata:
-      name: allow-from-bouviers-to-marge
-      namespace: simpson
+      name: allow-from-backend-to-siteb-frontend
+      namespace: frontend
     spec:
       podSelector:
         matchLabels:
-          deployment: marge
+          deployment: siteb-frontend
       ingress:
       - from:
         - namespaceSelector:
             matchLabels:
-              kubernetes.io/metadata.name: bouvier
+              kubernetes.io/metadata.name: backend
       policyTypes:
       - Ingress

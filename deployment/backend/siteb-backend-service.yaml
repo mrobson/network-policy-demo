@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: siteb-backend
+    app.kubernetes.io/component: siteb-backend
+    app.kubernetes.io/instance: siteb-backend
+    app.kubernetes.io/name: siteb-backend
+    app.kubernetes.io/part-of: siteb-backend
+    app.openshift.io/runtime-version: micro
+  name: siteb-backend
+spec:
+  ports:
+  - name: 8080-tcp
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: siteb-backend
+    deployment: siteb-backend

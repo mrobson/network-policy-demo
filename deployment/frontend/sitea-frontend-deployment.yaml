@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: sitea-frontend
+    app.kubernetes.io/component: sitea-frontend
+    app.kubernetes.io/instance: sitea-frontend
+    app.kubernetes.io/name: sitea-frontend
+    app.kubernetes.io/part-of: sitea-frontend
+    app.openshift.io/runtime: redhat
+  name: sitea-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sitea-frontend
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: sitea-frontend
+        deployment: sitea-frontend
+    spec:
+      containers:
+      - image: quay.io/openshift-examples/simple-http-server:micro
+        imagePullPolicy: Always
+        name: http-server
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources: {}

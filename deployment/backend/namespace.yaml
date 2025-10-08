@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    openshift.io/description: "backend"
+    openshift.io/display-name: "backend"
+  name: backend
+spec: {}

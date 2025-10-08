@@ -51,10 +51,10 @@ spec:
           - -c
           - |
 
-            export HOMER_URL=$( oc get route -n simpson homer -o jsonpath="{.spec.host}" )
-            export MARGE_URL=$( oc get route -n simpson marge -o jsonpath="{.spec.host}" )
-            export SELMA_URL=$( oc get route -n bouvier selma -o jsonpath="{.spec.host}" )
-            export PATTY_URL=$( oc get route -n bouvier patty -o jsonpath="{.spec.host}" )
+            export HOMER_URL=$( oc get route -n frontend sitea-frontend -o jsonpath="{.spec.host}" )
+            export MARGE_URL=$( oc get route -n frontend siteb-frontend -o jsonpath="{.spec.host}" )
+            export SELMA_URL=$( oc get route -n backend siteb-backend -o jsonpath="{.spec.host}" )
+            export PATTY_URL=$( oc get route -n backend sitea-backend -o jsonpath="{.spec.host}" )
 
             while true; do
                 echo "# =========================================================="

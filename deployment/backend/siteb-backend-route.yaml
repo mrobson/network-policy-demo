@@ -1,0 +1,22 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: siteb-backend
+    app.kubernetes.io/component: siteb-backend
+    app.kubernetes.io/instance: siteb-backend
+    app.kubernetes.io/name: siteb-backend
+    app.kubernetes.io/part-of: siteb-backend
+    app.openshift.io/runtime-version: micro
+  name: siteb-backend
+spec:
+  port:
+    targetPort: 8080-tcp
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: siteb-backend
+    weight: 100
+  wildcardPolicy: None
