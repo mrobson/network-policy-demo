@@ -27,7 +27,7 @@ spec:
         deployment: sitea-frontend
     spec:
       containers:
-      - image: quay.io/openshift-examples/simple-http-server:micro
+      - image: quay.io/mrobson/simple-http-server:latest
         imagePullPolicy: Always
         name: http-server
         ports:
