@@ -11,6 +11,8 @@ spec:
       labels:
         kubevirt.io/vm: sitea-data
     spec:
+      nodeSelector:
+        kubernetes.io/hostname: worker-5.ocpv.tamlab.rdu2.redhat.com
       domain:
         devices:
           disks:

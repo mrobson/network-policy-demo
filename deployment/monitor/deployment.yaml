@@ -18,6 +18,8 @@ spec:
       labels:
         app: monitor
     spec:
+      nodeSelector:
+        kubernetes.io/hostname: worker-5.ocpv.tamlab.rdu2.redhat.com
       volumes:
         - name: docroot
           emptyDir: {}
@@ -69,7 +71,6 @@ spec:
 
                 sleep 5;
             done;
-
       - image: registry.access.redhat.com/ubi9/nginx-122:latest
         name: nginx
         ports:
@@ -93,5 +94,4 @@ spec:
           - /bin/sh
           - -c
           - |
-
             /usr/libexec/s2i/run

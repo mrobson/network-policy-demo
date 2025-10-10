@@ -26,6 +26,8 @@ spec:
         app: siteb-frontend
         deployment: siteb-frontend
     spec:
+      nodeSelector:
+        kubernetes.io/hostname: worker-5.ocpv.tamlab.rdu2.redhat.com
       containers:
       - image: quay.io/mrobson/simple-http-server:latest
         imagePullPolicy: Always
