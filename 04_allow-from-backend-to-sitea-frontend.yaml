@@ -1,9 +1,12 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: allow-from-backend-to-frontend
+  name: allow-from-backend-to-sitea-frontend
+  namespace: frontend
 spec:
-  podSelector: {}
+  podSelector:
+    matchLabels:
+      deployment: sitea-frontend
   ingress:
   - from:
     - namespaceSelector:
