@@ -1,0 +1,11 @@
+apiVersion: k8s.cni.cncf.io/v1beta1
+kind: MultiNetworkPolicy
+metadata:
+  annotations:
+    k8s.v1.cni.cncf.io/policy-for: default/vlan530
+  name: deny-by-default
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  - Egress

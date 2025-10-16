@@ -1,0 +1,18 @@
+apiVersion: k8s.cni.cncf.io/v1beta1
+kind: MultiNetworkPolicy
+metadata:
+  annotations:
+    k8s.v1.cni.cncf.io/policy-for: default/vlan530
+  name: egressallow-gh
+spec:
+    egress:
+    - to:
+      - ipBlock:
+          cidr: 140.82.113.0/24
+      - ipBlock:
+          cidr: 8.8.8.8/32
+    podSelector:
+      matchLabels:
+        internet: "true"
+    policyTypes:
+    - Egress
